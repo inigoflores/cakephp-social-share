@@ -27,22 +27,22 @@ class SocialShareHelper extends Helper
      * @var array
      */
     protected $_fa = [
-        'delicious' => 'fa-delicious',
-        'digg' => 'fa-digg',
-        'email' => 'fa-envelope',
-        'facebook' => 'fa-facebook',
-        'google' => 'fa-google',
-        'gplus' => 'fa-google-plus',
-        'linkedin' => 'fa-linkedin',
-        'pinterest' => 'fa-pinterest',
-        'pocket' => 'fa-get-pocket',
-        'reddit' => 'fa-reddit',
-        'stumbleupon' => 'fa-stumbleupon',
-        'tumblr' => 'fa-tumblr',
-        'twitter' => 'fa-twitter',
-        'whatsapp' => 'fa-whatsapp'
+        'delicious' => 'fa-fw fa-brands fa-delicious',
+        'digg' => 'fa-fw fa-brands fa-digg',
+        'email' => 'fa-fw fa-solid fa-envelope',
+        'facebook' => 'fa-fw fa-brands fa-facebook',
+        'google' => 'fa-fw fa-brands fa-google',
+        'gplus' => 'fa-fw fa-brands fa-google-plus',
+        'linkedin' => 'fa-fw fa-brands fa-linkedin',
+        'pinterest' => 'fa-fw fa-brands fa-pinterest',
+        'pocket' => 'fa-fw fa-brands fa-get-pocket',
+        'reddit' => 'fa-fw fa-brands fa-reddit',
+        'stumbleupon' => 'fa-fw fa-brands fa-stumbleupon',
+        'tumblr' => 'fa-fw fa-brands fa-tumblr',
+        'twitter' => 'fa-fw fa-brands fa-twitter',
+        'x' => 'fa-fw fa-brands fa-x-twitter',
+        'whatsapp' => 'fa-fw fa-brands fa-whatsapp'
     ];
-
     /**
      * Returns the list of available services
      *
@@ -139,8 +139,8 @@ class SocialShareHelper extends Helper
         unset($options['icon_class']);
 
         $attributes = $options;
-        unset($attributes['text']);
-        unset($attributes['image']);
+        // unset($attributes['text']);
+        // unset($attributes['image']);
 
         return $this->Html->link(
             $icon,
@@ -162,7 +162,7 @@ class SocialShareHelper extends Helper
      */
     public function icon($service, array $options = [])
     {
-        $class = 'fa ' . (!empty($this->_fa[$service]) ? $this->_fa[$service] : $this->_config['default_fa']);
+        $class = 'social-share-icon fa ' . (!empty($this->_fa[$service]) ? $this->_fa[$service] : $this->_config['default_fa']);
         if (!empty($options['icon_class'])) {
             $class = $options['icon_class'];
         }
